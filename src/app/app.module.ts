@@ -8,9 +8,22 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
+import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './home/home.component';
+
+import { UserListingComponent } from './user-listing/user-listing.component';
+import { UpdatePopUpComponent } from './update-pop-up/update-pop-up.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [
+    AppComponent,
+    RegisterComponent,
+    LoginComponent,
+    HomeComponent,
+    UserListingComponent,
+    UpdatePopUpComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
