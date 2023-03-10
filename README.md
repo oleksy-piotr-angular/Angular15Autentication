@@ -1,6 +1,11 @@
 # Angular15Authentication
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.0.
+To Open Project:
+1. run "npm install" command
+2. "json-server --watch db.json" Need to run  to turn on Json Server API
+3. run "ng serve" command
+
 
 ## Development server
 
