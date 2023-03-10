@@ -26,18 +26,6 @@ export class LoginComponent {
   });
   proceedLogin() {
     if (this.loginForm.valid) {
-      /*  this.authService
-        .ProceedRegister(this.loginForm.value)
-        .subscribe((res) => {
-          this.toastr.success(
-            'Please contact admin for enable access',
-            'Registered Successfully'
-          );
-          this.router.navigate(['login']);
-        });
-    } else {
-      this.toastr.warning('Please enter valid data'); */
-
       this.authService
         .getByCode(this.loginForm.value.userName)
         .subscribe((res) => {

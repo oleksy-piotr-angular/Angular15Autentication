@@ -13,14 +13,14 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class UserListingComponent {
   constructor(private authService: AuthService, private dialog: MatDialog) {
-    this.LoadUser();
+    this.loadUser();
   }
   userList: any;
   dataSource: any;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  LoadUser() {
+  loadUser() {
     this.authService.getAll().subscribe((res) => {
       this.userList = res;
       this.dataSource = new MatTableDataSource(this.userList);
@@ -38,13 +38,16 @@ export class UserListingComponent {
     'action',
   ];
   updateUser(code: any) {
-    this.dialog.open(UpdatePopUpComponent, {
+    const popup = this.dialog.open(UpdatePopUpComponent, {
       enterAnimationDuration: '1000ms',
       exitAnimationDuration: '500ms',
       width: '50%',
       data: {
         userCode: code,
       },
+    });
+    popup.afterClosed().subscribe((res) => {
+      this.loadUser();
     });
   }
 

@@ -21,8 +21,8 @@ export class AuthService {
   proceedRegister(inputData: any) {
     return this.http.post(this.apiUrl, inputData);
   }
-  updateUser(code: string, inputData: any) {
-    return this.http.post(this.apiUrl + '/' + code, inputData);
+  updateUser(id: any, inputData: any) {
+    return this.http.put(this.apiUrl + '/' + id, inputData);
   }
   isLoggedIn() {
     return sessionStorage.getItem('userName') != null;

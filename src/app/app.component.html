@@ -7,7 +7,7 @@
   />
   <span>Welcome</span>
   <a routerLink="">Home</a>
-  <a routerLink="/user">User</a>
+  <a *ngIf="isAdminUser" routerLink="/user">User</a>
   <div class="spacer"></div>
   <a routerLink="/login">Logout</a>
 </div>
